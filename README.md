@@ -1,1 +1,1 @@
-Are you lonely? Use StudyBuddy. Anmol
+Are you lonely? Use StudyBuddy Now
