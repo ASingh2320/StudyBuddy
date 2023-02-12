@@ -51,15 +51,15 @@ export default function Navbar(props) {
 
 
     const classes = [
-        { label: 'CSE', id: 1 },
-        { label: 'AMS', id: 2 },
-        { label: 'IAE', id: 3 }
+        { label: 'CSE'},
+        { label: 'AMS'},
+        { label: 'IAE'}
         // ...
       ];
       const classesNum = [
-        { label: '220', id: 1 },
-        { label: '310', id: 2 },
-        { label: '100', id: 3 }
+        { label: '220'},
+        { label: '310'},
+        { label: '100'}
         // ...
       ];
 

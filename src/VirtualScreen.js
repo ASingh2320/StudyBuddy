@@ -76,8 +76,8 @@ const ScrollableGrid = () => {
       ))}
 
       {selectedItem && (
-        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
-          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'white', padding: '20px' }}>
+        <div style={{position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+          <div style={{ borderRadius: "30px", position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'white', padding: '20px' }}>
             <p>Name: {selectedItem.personName}</p>
             <p>Group Name: {selectedItem.title}</p>
             <p>Time: {selectedItem.time}</p>
