@@ -1,15 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
+import VirtualScreen from './VirtualScreen';
+import InPerson from './InPerson';
 import Navbar from './common_components/Navbar';
 import HomeScreen from './HomeScreen';
-import InPerson from './InPerson';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <InPerson/> 
-    </div>
+    <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<>
+            <Navbar />
+            <HomeScreen />
+          </>} />
+          <Route path="/virtualScreen" element={
+          <>
+          <Navbar/>
+          <VirtualScreen />
+          </>
+        } />
+          <Route path="/inPerson" element={<>
+            <Navbar />
+            <InPerson />
+          </>} />
+          <Route path="/" element={<HomeScreen />}>
+        </Route>
+      </Routes>
+
+    </BrowserRouter>
   );
 }
 

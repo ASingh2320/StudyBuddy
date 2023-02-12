@@ -17,6 +17,8 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import AddIcon from '@mui/icons-material/Add';
 import Autocomplete from '@mui/material/Autocomplete';
+import { Link } from 'react-router-dom';
+
 
 export default function Navbar() {
 
@@ -117,10 +119,14 @@ export default function Navbar() {
       </Button>
       </ListItem>
       <ListItem>
+      <Link to="/inPerson"> 
       <Button sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}}> In Person </Button>
+      </Link>
       </ListItem>
       <ListItem>
+      <Link to="/virtualScreen"> 
       <Button sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}} > Virtual </Button>
+      </Link> 
       </ListItem>
       <ListItem>
       <Button sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}} onClick={toggleLoginModal}> Login </Button>
@@ -143,34 +149,36 @@ export default function Navbar() {
     }}
         >
     <FormControl>
-                <TextField id="outlined-basic" variant="outlined" defaultValue="Group Name"/>
+                <TextField style= {{marginBottom: "10px", marginTop: "10px", marginLeft: "20px", marginRight: "20px", background: "white"}}id="outlined-basic" variant="outlined" placeholder="Group Name"/>
                 <Autocomplete
-                    style={{ marginBottom: '20px' }}
+                    style= {{marginBottom: "10px", marginTop: "10px", marginLeft: "20px", marginRight: "20px", background: "white"}}
                     disablePortal
                     id="combo-box-demo"
                     options={classes}
                     sx={{ width: 500 }}
-                    renderInput={(params) => <TextField {...params} label="Class Name" />}
+                    renderInput={(params) => <TextField {...params} placeholder="Class Name" />}
                 />
                 <Autocomplete
-                    style={{ marginBottom: '20px' }}
+                    style= {{marginBottom: "10px", marginTop: "10px", marginLeft: "20px", marginRight: "20px", background: "white"}}
                     disablePortal
                     id="combo-box-demo"
                     options={classesNum}
                     sx={{ width: 500 }}
-                    renderInput={(params) => <TextField {...params} label="Class Number" />}
+                    renderInput={(params) => <TextField {...params} placeholder="Class Number" />}
                 />
-                <TextField id="outlined-basic" variant="outlined" defaultValue="Max Count" type="number"/>
+                <TextField style= {{marginBottom: "10px", marginTop: "10px", marginLeft: "20px", marginRight: "20px", background: "white"}} id="outlined-basic" variant="outlined" type="number" placeholder="Max Count"/>
+                
                 <ListItem>
-                    <input type="time" id="appt" name="appt" />
+                    <input style= {{marginLeft: "5px"}}type="time" id="appt" name="appt" />
                 </ListItem>
+
                 <ListItem>
-                    <input type="date" id="appt" name="appt" />
+                    <input style= {{marginLeft: "5px"}} type="date" id="appt" name="appt" />
                 </ListItem>
-                <Button onClick={location_select} variant="contained" sx={{fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "#990000", fontWeight: 'bold', marginRight: '10px'}}>
+                <Button onClick={location_select} variant="contained" sx={{marginBottom: "10px", marginTop: "10px", marginLeft: "20px", marginRight: "20px", fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "#990000", fontWeight: 'bold', marginRight: '10px'}}>
                     Select Location
                 </Button>
-                <Button variant="contained" sx={{fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "#990000", fontWeight: 'bold', marginRight: '10px'}}>
+                <Button variant="contained" sx={{marginBottom: "10px", marginTop: "10px", marginLeft: "20px", marginRight: "20px", fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "#990000", fontWeight: 'bold', marginRight: '10px'}}>
                     Confirm Study Group
                 </Button>
 
