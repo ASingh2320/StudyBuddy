@@ -56,8 +56,8 @@ StudyBuddy was developed by the following individuals:
 
 - Anmol Singh     :rocket:
 - Biraj Ghimira   :basketball:
-- Brian Shao      :sunglasses:
-- Tony Bui        :skull:
+- Brian Shao      :skull:
+- Tony Bui        :sunglasses:
 
 ===========================================================================
 
