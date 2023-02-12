@@ -41,7 +41,7 @@ const ScrollableGrid = () => {
   return (
     <div style={{overflow: 'auto'}}>
    
-    <div style = {{display: 'flex', marginBottom: '20px', marginTop: '20px', justifyContent: 'center', alignItems: 'center'}}>
+    <div style = {{display: 'flex', marginBottom: '20px', marginTop: '90px', justifyContent: 'center', alignItems: 'center'}}>
       <Autocomplete
       disablePortal
       options={departments}
@@ -63,7 +63,7 @@ const ScrollableGrid = () => {
 
 </div>
       {items.map(item => (
-        <div key={item.id} style={{ backgroundColor: '#F5F5F5', borderRadius: '30px',border: '0.7px solid black', padding: '10px', cursor: 'pointer', marginLeft: '50px', marginRight: '50px', marginBottom: '20px' }} onClick={() => handleItemClick(item)}>
+        <div key={item.id} style={{ textAlign: "center", backgroundColor: '#F5F5F5', borderRadius: '30px',border: '0.7px solid black', padding: '10px', cursor: 'pointer', marginLeft: '50px', marginRight: '50px', marginBottom: '20px' }} onClick={() => handleItemClick(item)}>
           <h2>{item.title}</h2>
           <p>Time: {item.time}</p>
         </div>
@@ -81,7 +81,7 @@ const ScrollableGrid = () => {
               return index <  (selectedItem.PeopleInGroup.length - 1) ? <div>{person + ", "}</div> : <div>{person}</div>
             })}</p>
 
-            <Button variant="contained" sx={{fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "green", fontWeight: 'bold'}}>
+            <Button variant="contained" sx={{marginLeft: "305px", fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "green", fontWeight: 'bold'}}>
                     Join
                 </Button>
             <div style={{marginTop: "10px", display: "flex", justifyContent: "center", alignItems: "center"}}>
