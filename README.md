@@ -55,7 +55,7 @@ Our frontend data is still compatible by itself and can be ran with mock test da
 StudyBuddy was developed by the following individuals:
 
 - Anmol Singh     :rocket:
-- Biraj Ghimira   :basketball:
+- Biraj Ghimire   :basketball:
 - Brian Shao      :skull:
 - Tony Bui        :sunglasses:
 
