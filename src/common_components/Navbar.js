@@ -53,7 +53,7 @@ export default function Navbar() {
             sx={{ mr: 2, marginLeft: "auto"}}
             onClick={() => toggleDrawer(true)}
           ><MenuIcon/></IconButton>
-
+  <div>
     <SwipeableDrawer
     anchor ={'right'}
       open={drawer}
@@ -65,21 +65,21 @@ export default function Navbar() {
     }}
         >
     <List sx={{ width: '100%', bgcolor: 'background.paper' , m: 2, backgroundColor:  "#D9D9D9"}}>
-      <ListItem>
-        <Typography sx={{fontSize: 20}}> In Person </Typography>
+      <ListItem sx={{border: "1px solid black"}}>
+        <Typography sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif', border: "1px solid black"}}> In Person </Typography>
       </ListItem>
       <ListItem>
-      <Typography sx={{fontSize: 20}}> Virtual </Typography>
+      <Typography sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}}> Virtual </Typography>
       </ListItem>
       <ListItem>
-      <Typography sx={{fontSize: 20}}> Login </Typography>
+      <Typography sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}}> Login </Typography>
       </ListItem>
       <ListItem>
-      <Typography sx={{fontSize: 20}}> Register </Typography>
+      <Typography sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}}> Register </Typography>
       </ListItem>
     </List>
         </SwipeableDrawer>
-          
+    </div>  
         </Toolbar>
       </AppBar>
     </Box>
