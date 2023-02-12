@@ -18,6 +18,7 @@ export default function InPerson() {
         googleMapsApiKey: "AIzaSyDtoh-s2x3zuGDOt9d5RWC6nDFmSuBzkJk"
       })
 
+      const [selectMode, setSelectMode] = React.useState(null)
       const [map, setMap] = React.useState(null)
       const [tempMarker, editTemp] = React.useState(null);
 

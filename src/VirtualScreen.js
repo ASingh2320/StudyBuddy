@@ -5,13 +5,13 @@ import Button from '@mui/material/Button';
 import {green} from '@mui/material/colors';
 
 const items = [  
-{ id: 1, title: 'UltimateStudyBuddy', time: '1:00pm', personName: "John", zoomLink: "https://docs.google.com/document/d/1_7-DAOE97ePpm0XL0tYhbsjR3S846QP7RxQh9RAfTjY/edit", GroupSize: 5, PeopleInGroup: ["biraj.ghimire@stonybrook.edu", "anmol.singh@stonybrook.edu"]},
-{ id: 2, title: 'Birajs Study Group', time: '1:00pm', personName: "John", zoomLink: "https://docs.google.com/document/d/1_7-DAOE97ePpm0XL0tYhbsjR3S846QP7RxQh9RAfTjY/edit", GroupSize: 5, PeopleInGroup: ["biraj.ghimire@stonybrook.edu", "anmol.singh@stonybrook.edu"] },
-{ id: 3, title: 'Anmols Study Group', time: '1:00pm', personName: "John", zoomLink: "https://docs.google.com/document/d/1_7-DAOE97ePpm0XL0tYhbsjR3S846QP7RxQh9RAfTjY/edit", GroupSize: 5, PeopleInGroup: ["biraj.ghimire@stonybrook.edu", "anmol.singh@stonybrook.edu"] },
-{ id: 4, title: 'Tonys Study Group', time: '1:00pm', personName: "John", zoomLink: "https://docs.google.com/document/d/1_7-DAOE97ePpm0XL0tYhbsjR3S846QP7RxQh9RAfTjY/edit", GroupSize: 5, PeopleInGroup: ["biraj.ghimire@stonybrook.edu", "anmol.singh@stonybrook.edu"] },
-{ id: 5, title: 'Bryans Study Group', time: '1:00pm', personName: "John", zoomLink: "https://docs.google.com/document/d/1_7-DAOE97ePpm0XL0tYhbsjR3S846QP7RxQh9RAfTjY/edit", GroupSize: 5, PeopleInGroup: ["biraj.ghimire@stonybrook.edu", "anmol.singh@stonybrook.edu"] },
-{ id: 6, title: 'Aidans Study Group', time: '1:00pm', personName: "John", zoomLink: "https://docs.google.com/document/d/1_7-DAOE97ePpm0XL0tYhbsjR3S846QP7RxQh9RAfTjY/edit", GroupSize: 5, PeopleInGroup: ["biraj.ghimire@stonybrook.edu", "anmol.singh@stonybrook.edu"] },
-{ id: 7, title: 'Chelseas Study Group', time: '1:00pm', personName: "John", zoomLink: "https://docs.google.com/document/d/1_7-DAOE97ePpm0XL0tYhbsjR3S846QP7RxQh9RAfTjY/edit", GroupSize: 5, PeopleInGroup: ["biraj.ghimire@stonybrook.edu", "anmol.singh@stonybrook.edu"] },
+{ id: 1, title: 'UltimateStudyBuddy', date: '3/02/2023', time: '1:00pm', personName: "John", zoomLink: "https://docs.google.com/document/d/1_7-DAOE97ePpm0XL0tYhbsjR3S846QP7RxQh9RAfTjY/edit", GroupSize: 5, PeopleInGroup: ["biraj.ghimire@stonybrook.edu", "anmol.singh@stonybrook.edu"]},
+{ id: 2, title: 'Birajs Study Group', date: '3/02/2023',time: '1:00pm', personName: "John", zoomLink: "https://docs.google.com/document/d/1_7-DAOE97ePpm0XL0tYhbsjR3S846QP7RxQh9RAfTjY/edit", GroupSize: 5, PeopleInGroup: ["biraj.ghimire@stonybrook.edu", "anmol.singh@stonybrook.edu"] },
+{ id: 3, title: 'Anmols Study Group', date: '3/02/2023',time: '1:00pm', personName: "John", zoomLink: "https://docs.google.com/document/d/1_7-DAOE97ePpm0XL0tYhbsjR3S846QP7RxQh9RAfTjY/edit", GroupSize: 5, PeopleInGroup: ["biraj.ghimire@stonybrook.edu", "anmol.singh@stonybrook.edu"] },
+{ id: 4, title: 'Tonys Study Group', date:'3/02/2023',time: '1:00pm', personName: "John", zoomLink: "https://docs.google.com/document/d/1_7-DAOE97ePpm0XL0tYhbsjR3S846QP7RxQh9RAfTjY/edit", GroupSize: 5, PeopleInGroup: ["biraj.ghimire@stonybrook.edu", "anmol.singh@stonybrook.edu"] },
+{ id: 5, title: 'Bryans Study Group', date: '3/02/2023',time: '1:00pm', personName: "John", zoomLink: "https://docs.google.com/document/d/1_7-DAOE97ePpm0XL0tYhbsjR3S846QP7RxQh9RAfTjY/edit", GroupSize: 5, PeopleInGroup: ["biraj.ghimire@stonybrook.edu", "anmol.singh@stonybrook.edu"] },
+{ id: 6, title: 'Aidans Study Group', date: '3/02/2023',time: '1:00pm', personName: "John", zoomLink: "https://docs.google.com/document/d/1_7-DAOE97ePpm0XL0tYhbsjR3S846QP7RxQh9RAfTjY/edit", GroupSize: 5, PeopleInGroup: ["biraj.ghimire@stonybrook.edu", "anmol.singh@stonybrook.edu"] },
+{ id: 7, title: 'Chelseas Study Group', date: '3/02/2023',time: '1:00pm', personName: "John", zoomLink: "https://docs.google.com/document/d/1_7-DAOE97ePpm0XL0tYhbsjR3S846QP7RxQh9RAfTjY/edit", GroupSize: 5, PeopleInGroup: ["biraj.ghimire@stonybrook.edu", "anmol.singh@stonybrook.edu"] },
     ];  // add more items here];
 
 
@@ -36,6 +36,11 @@ const ScrollableGrid = () => {
 
   const handleCloseModal = () => {
     setSelectedItem(null);
+  };
+
+  const handleCloseOnJoin = () => {
+    setSelectedItem(null);
+    alert('Group Joined Successfully')
   };
 
   return (
@@ -63,8 +68,9 @@ const ScrollableGrid = () => {
 
 </div>
       {items.map(item => (
-        <div key={item.id} style={{ textAlign: "center", backgroundColor: '#F5F5F5', borderRadius: '30px',border: '0.7px solid black', padding: '10px', cursor: 'pointer', marginLeft: '50px', marginRight: '50px', marginBottom: '20px' }} onClick={() => handleItemClick(item)}>
-          <h2>{item.title}</h2>
+        <div key={item.id} style={{ fontFamily: '"Helvetica", "Arial", sans-serif', textAlign: "center", backgroundColor: '#F5F5F5', borderRadius: '30px',border: '0.7px solid black', padding: '10px', cursor: 'pointer', marginLeft: '50px', marginRight: '50px', marginBottom: '20px' }} onClick={() => handleItemClick(item)}>
+          <h3>{item.title}</h3>
+          <p>Date: {item.date}</p>
           <p>Time: {item.time}</p>
         </div>
       ))}
@@ -81,7 +87,7 @@ const ScrollableGrid = () => {
               return index <  (selectedItem.PeopleInGroup.length - 1) ? <div>{person + ", "}</div> : <div>{person}</div>
             })}</p>
 
-            <Button variant="contained" sx={{marginLeft: "305px", fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "green", fontWeight: 'bold'}}>
+            <Button onClick= {handleCloseOnJoin} variant="contained" sx={{marginLeft: "305px", fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "green", fontWeight: 'bold'}}>
                     Join
                 </Button>
             <div style={{marginTop: "10px", display: "flex", justifyContent: "center", alignItems: "center"}}>
