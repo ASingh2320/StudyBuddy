@@ -13,12 +13,32 @@ import { TextField } from '@mui/material';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import AddIcon from '@mui/icons-material/Add';
+import Autocomplete from '@mui/material/Autocomplete';
 
 export default function Navbar() {
 
     const [drawer, toggleDrawer] = useState(false);
     const [leftdrawer, toggleLeft] = useState(false);
+    const [selectMode, toggleSelect] = useState(false);
+    const [markers, editMarkers] = useState([]);
 
+    const classes = [
+        { label: 'CSE', id: 1 },
+        { label: 'AMS', id: 2 },
+        { label: 'IAE', id: 3 }
+        // ...
+      ];
+      const classesNum = [
+        { label: '220', id: 1 },
+        { label: '310', id: 2 },
+        { label: '101', id: 3 }
+        // ...
+      ];
+
+    const location_select = () => {
+        toggleLeft(false);
+        toggleSelect(true);
+    }
   return (
     <>
     
@@ -64,17 +84,17 @@ export default function Navbar() {
     }}
         >
     <List sx={{ width: '100%', bgcolor: 'background.paper' , m: 2, backgroundColor:  "#D9D9D9"}}>
-      <ListItem>
-        <Typography sx={{fontSize: 20}}> In Person </Typography>
+      <ListItem sx={{border: "1px solid black"}}>
+        <Typography sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif', border: "1px solid black"}}> In Person </Typography>
       </ListItem>
       <ListItem>
-      <Typography sx={{fontSize: 20}}> Virtual </Typography>
+      <Typography sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}}> Virtual </Typography>
       </ListItem>
       <ListItem>
-      <Typography sx={{fontSize: 20}}> Login </Typography>
+      <Typography sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}}> Login </Typography>
       </ListItem>
       <ListItem>
-      <Typography sx={{fontSize: 20}}> Register </Typography>
+      <Typography sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}}> Register </Typography>
       </ListItem>
     </List>
         </SwipeableDrawer>
@@ -90,24 +110,30 @@ export default function Navbar() {
     }}
         >
     <FormControl>
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" defaultValue="Group Name"/>
+                <TextField id="outlined-basic" variant="outlined" defaultValue="Group Name"/>
+                <Autocomplete
+                    style={{ marginBottom: '20px' }}
+                    disablePortal
+                    id="combo-box-demo"
+                    options={classes}
+                    sx={{ width: 500 }}
+                    renderInput={(params) => <TextField {...params} label="Class Name" />}
+                />
+                <Autocomplete
+                    style={{ marginBottom: '20px' }}
+                    disablePortal
+                    id="combo-box-demo"
+                    options={classesNum}
+                    sx={{ width: 500 }}
+                    renderInput={(params) => <TextField {...params} label="Class Number" />}
+                />
+                <TextField id="outlined-basic" variant="outlined" defaultValue="Max Count" type="number"/>
+                <Button onClick={location_select} variant="contained" sx={{fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "#990000", fontWeight: 'bold', marginRight: '10px'}}>
+                    Select Location
+                </Button>
+                
         
     </FormControl>
-
-    <List sx={{ width: '100%', bgcolor: 'background.paper' , m: 2, backgroundColor:  "#D9D9D9"}}>
-      <ListItem>
-        <Typography sx={{fontSize: 20}}> In Person </Typography>
-      </ListItem>
-      <ListItem>
-      <Typography sx={{fontSize: 20}}> Virtual </Typography>
-      </ListItem>
-      <ListItem>
-      <Typography sx={{fontSize: 20}}> Login </Typography>
-      </ListItem>
-      <ListItem>
-      <Typography sx={{fontSize: 20}}> Register </Typography>
-      </ListItem>
-    </List>
         </SwipeableDrawer>
           
         </Toolbar>
