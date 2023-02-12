@@ -1,10 +1,10 @@
  # StudyBuddy 
 
-=======================================================================================
+===========================================================================
 
 StudyBuddy is a productivity tool designed to help students stay organized and on track with their studies. The application allows users to create and manage their study schedules, set reminders, and track their progress. Additionally, StudyBuddy seeks to help students on campus find other study partners by providing the option to either create an online virtual group or connect with other students on campus to study in-person.
 
-=======================================================================================
+===========================================================================
 
 ## Getting Started
 
@@ -28,7 +28,7 @@ Start the application:
 
 This will start the development server and open the application in your default web browser.
 
-=======================================================================================
+===========================================================================
 
 ## Built With
 React - A JavaScript library for building user interfaces
@@ -42,14 +42,14 @@ If you would like to contribute to the project, please follow these guidelines:
 3. Make your changes and push to the new branch.
 4. Submit a pull request to the master branch.
 
-=======================================================================================
+===========================================================================
 
 ## Additional Information:
 
 We implemented our application using MERN stack. However, MongoDB and its backend operations are not provided in this github repo.
 Our frontend data is still compatible by itself and can be ran with mock test data.
 
-=======================================================================================
+===========================================================================
 
 ## Developers
 StudyBuddy was developed by the following individuals:
@@ -59,9 +59,9 @@ StudyBuddy was developed by the following individuals:
 - Brian Shao      :sunglasses:
 - Tony Bui        :skull:
 
-=======================================================================================
+===========================================================================
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-==========================Are you lonely? Use StudyBuddy Now!==========================
+====================Are you lonely? Use StudyBuddy Now!====================
