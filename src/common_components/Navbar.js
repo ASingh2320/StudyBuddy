@@ -128,9 +128,19 @@ export default function Navbar() {
                     renderInput={(params) => <TextField {...params} label="Class Number" />}
                 />
                 <TextField id="outlined-basic" variant="outlined" defaultValue="Max Count" type="number"/>
+                <ListItem>
+                    <input type="time" id="appt" name="appt" />
+                </ListItem>
+                <ListItem>
+                    <input type="date" id="appt" name="appt" />
+                </ListItem>
                 <Button onClick={location_select} variant="contained" sx={{fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "#990000", fontWeight: 'bold', marginRight: '10px'}}>
                     Select Location
                 </Button>
+                <Button variant="contained" sx={{fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "#990000", fontWeight: 'bold', marginRight: '10px'}}>
+                    Confirm Study Group
+                </Button>
+
                 
         
     </FormControl>
