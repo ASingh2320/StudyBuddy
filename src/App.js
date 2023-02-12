@@ -11,17 +11,17 @@ function App() {
     <BrowserRouter>
       <Routes>
           <Route path="/" element={<>
-            <Navbar />
+            <Navbar buttonShow = {false} inPerson = {false}/>
             <HomeScreen />
           </>} />
           <Route path="/virtualScreen" element={
           <>
-          <Navbar/>
+          <Navbar buttonShow = {true} inPerson = {false}/>
           <VirtualScreen />
           </>
         } />
           <Route path="/inPerson" element={<>
-            <Navbar />
+            <Navbar buttonShow = {true} inPerson = {true}/>
             <InPerson />
           </>} />
           <Route path="/" element={<HomeScreen />}>

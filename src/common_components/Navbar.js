@@ -20,7 +20,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import { Link } from 'react-router-dom';
 
 
-export default function Navbar() {
+export default function Navbar(props) {
 
     const [drawer, toggleDrawer] = useState(false);
     const [openRegister, setOpenRegister] = useState(false);
@@ -54,13 +54,13 @@ export default function Navbar() {
       const classesNum = [
         { label: '220', id: 1 },
         { label: '310', id: 2 },
-        { label: '101', id: 3 }
+        { label: '100', id: 3 }
         // ...
       ];
 
     const location_select = () => {
         toggleLeft(false);
-        toggleSelect(true);
+        if (props.inPerson){(toggleSelect(true))};
     }
   return (
     <>
@@ -114,12 +114,12 @@ export default function Navbar() {
       </Button>
       </ListItem>
       <ListItem>
-      <Link to="/inPerson"> 
+      <Link to="/inPerson" style={{textDecoration:'none'}}> 
       <Button sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}}> In Person </Button>
       </Link>
       </ListItem>
       <ListItem>
-      <Link to="/virtualScreen"> 
+      <Link to="/virtualScreen" style={{textDecoration:'none'}}> 
       <Button sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}} > Virtual </Button>
       </Link> 
       </ListItem>
@@ -129,6 +129,12 @@ export default function Navbar() {
       </ListItem> 
       <ListItem>
       {(login) ?  <Typography sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif', color: '#990000'}}> Study </Typography> : <Button sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}} onClick={toggleRegisterModal}> Register </Button> }
+      </ListItem> 
+      <ListItem>
+      <Button sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}} onClick={toggleLoginModal}> Login </Button>
+      </ListItem>
+      <ListItem>
+      {(login) ?  <Typography sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif', color: '#990000'}}> Study </Typography> : <Button sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif', fontFamily: '"Helvetica", "Arial", sans-serif'}} onClick={toggleRegisterModal}> Register </Button> }
       </ListItem> 
     </List>
         </SwipeableDrawer>
@@ -162,21 +168,28 @@ export default function Navbar() {
                     renderInput={(params) => <TextField {...params} placeholder="Class Number" />}
                 />
                 <TextField style= {{marginBottom: "10px", marginTop: "10px", marginLeft: "20px", marginRight: "20px", background: "white"}} id="outlined-basic" variant="outlined" type="number" placeholder="Max Count"/>
-                
-                <ListItem>
+                <TextField style= {{marginBottom: "10px", marginTop: "10px", marginLeft: "20px", marginRight: "20px", background: "white"}}id="outlined-basic" variant="outlined" placeholder="Time"/>
+                <TextField style= {{marginBottom: "10px", marginTop: "10px", marginLeft: "20px", marginRight: "20px", background: "white"}}id="outlined-basic" variant="outlined" placeholder="MM/DD/YYYY"/>
+                {/* <ListItem>
                     <input style= {{marginLeft: "5px"}}type="time" id="appt" name="appt" />
                 </ListItem>
 
                 <ListItem>
                     <input style= {{marginLeft: "5px"}} type="date" id="appt" name="appt" />
-                </ListItem>
+                </ListItem> */}
+
+                { props.inPerson ?  
                 <Button onClick={location_select} variant="contained" sx={{marginBottom: "10px", marginTop: "10px", marginLeft: "20px", marginRight: "20px", fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "#990000", fontWeight: 'bold', marginRight: '10px'}}>
                     Select Location
-                </Button>
-                <Button variant="contained" sx={{marginBottom: "10px", marginTop: "10px", marginLeft: "20px", marginRight: "20px", fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "#990000", fontWeight: 'bold', marginRight: '10px'}}>
+                </Button> : 
+                <><TextField style= {{marginBottom: "10px", marginTop: "10px", marginLeft: "20px", marginRight: "20px", background: "white"}} id="outlined-basic" variant="outlined" type="number" placeholder="Virtual Link"/>
+                
+                <Button onClick={location_select} variant="contained" sx={{marginBottom: "10px", marginTop: "10px", marginLeft: "20px", marginRight: "20px", fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "#990000", fontWeight: 'bold', marginRight: '10px'}}>
                     Confirm Study Group
                 </Button>
-
+                </>
+                } 
+                
                 
         
     </FormControl>
@@ -184,9 +197,14 @@ export default function Navbar() {
           
         </Toolbar>
 
+        { props.buttonShow && 
         <Button onClick={() => toggleLeft(true)} variant="contained" sx={{position: "fixed", bottom: "20px", left: "10px", fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "#990000", fontWeight: 'bold', marginRight: '10px'}}>
             <AddIcon/>
-        </Button>
+        </Button>}
+
+        {selectMode && <Button onClick={() => toggleSelect(false)} variant="contained" sx={{position: "fixed", bottom: "20px", left: "10px", fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "green", fontWeight: 'bold', marginRight: '10px', marginLeft: '600px'}}>
+                    Confirm Study Group
+                </Button>}
       </AppBar>
       {openRegister && <RegisterModal open={openRegister} setOpen={setOpenRegister} registered={register} setRegister={setRegister}/>}
       {openLogin && <LoginModal open={openLogin} setOpen={setOpenLogin} login={login} setLogin={setLogin}/>}

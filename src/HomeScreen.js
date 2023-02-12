@@ -49,13 +49,13 @@ export default function HomeScreen() {
                     sx={{ width: 500 }}
                     renderInput={(params) => <TextField {...params} label="Class Number" />}
                 />
-                <Link to="/inPerson"> 
+                <Link to="/inPerson" style={{textDecoration:'none'}}> 
                 <Button variant="contained" sx={{marginLeft: "130px", fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "#990000", fontWeight: 'bold', marginRight: '10px'}}>
                     In-person
                 </Button>
                 </Link>
 
-                <Link to="/virtualScreen"> 
+                <Link to="/virtualScreen" style={{textDecoration:'none'}}> 
                 <Button variant="contained" sx={{fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "#990000", fontWeight: 'bold'}}>
                     Virtual
                 </Button>
