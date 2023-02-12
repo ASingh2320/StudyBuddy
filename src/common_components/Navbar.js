@@ -3,10 +3,13 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
+import CloseIcon from '@mui/icons-material/Close';
+import Button from '@mui/material/Button';
+import LoginModal from './LoginModal';
+import RegisterModal from './RegisterModal';
 import FormControl from '@mui/material/FormControl';
 import { TextField } from '@mui/material';
 //
@@ -18,9 +21,32 @@ import Autocomplete from '@mui/material/Autocomplete';
 export default function Navbar() {
 
     const [drawer, toggleDrawer] = useState(false);
+    const [openRegister, setOpenRegister] = useState(false);
+    const [openLogin, setOpenLogin] = useState(false);
     const [leftdrawer, toggleLeft] = useState(false);
     const [selectMode, toggleSelect] = useState(false);
     const [markers, editMarkers] = useState([]);
+
+    function toggleRegisterModal(){
+      setOpenRegister(true);
+      toggleDrawer(false);
+    }
+
+    function closeHamburger() {
+      toggleDrawer(false);
+    }
+
+    function toggleLoginModal(){
+      setOpenLogin(true);
+      toggleDrawer(false);
+    }
+
+
+    let registerModal = "";
+    if(openRegister) {
+    registerModal = " ";
+    }
+
 
     const classes = [
         { label: 'CSE', id: 1 },
@@ -76,26 +102,33 @@ export default function Navbar() {
     <SwipeableDrawer
     anchor ={'right'}
       open={drawer}
-      onBlur={() => toggleDrawer(false)}
+      //onBlur={() => toggleDrawer(false)}
     PaperProps={{
         sx: {
-        backgroundColor: "#D9D9D9"
+        backgroundColor: "#D9D9D9",
+        width:'50vh',
         }
     }}
         >
-    <List sx={{ width: '100%', bgcolor: 'background.paper' , m: 2, backgroundColor:  "#D9D9D9"}}>
-      <ListItem sx={{border: "1px solid black"}}>
-        <Typography sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif', border: "1px solid black"}}> In Person </Typography>
+    <List sx={{ width: '60%', bgcolor: 'background.paper' , m: 2, backgroundColor:  "#D9D9D9"}}>
+      <ListItem >
+      <Button sx={{fontSize: 20, left:'130%'}} onClick={closeHamburger}> 
+      <CloseIcon/> 
+      </Button>
       </ListItem>
       <ListItem>
-      <Typography sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}}> Virtual </Typography>
+      <Button sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}}> In Person </Button>
       </ListItem>
       <ListItem>
-      <Typography sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}}> Login </Typography>
+      <Button sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}} > Virtual </Button>
       </ListItem>
       <ListItem>
-      <Typography sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}}> Register </Typography>
+      <Button sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}} onClick={toggleLoginModal}> Login </Button>
       </ListItem>
+      <ListItem>
+      <Button sx={{fontSize: 20}} onClick={toggleRegisterModal}> Register </Button>
+      </ListItem>
+
     </List>
         </SwipeableDrawer>
           
@@ -152,7 +185,8 @@ export default function Navbar() {
             <AddIcon/>
         </Button>
       </AppBar>
-      
+      {openRegister && <RegisterModal open={openRegister} setOpen={setOpenRegister}/>}
+      {openLogin && <LoginModal open={openLogin} setOpen={setOpenLogin}/>}
     </Box>
 
 
