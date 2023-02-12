@@ -65,7 +65,7 @@ export default function Navbar() {
     }}
         >
     <List sx={{ width: '100%', bgcolor: 'background.paper' , m: 2, backgroundColor:  "#D9D9D9"}}>
-      <ListItem>
+      <ListItem sx={{border: "1px solid black"}}>
         <Typography sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif', border: "1px solid black"}}> In Person </Typography>
       </ListItem>
       <ListItem>
@@ -79,7 +79,7 @@ export default function Navbar() {
       </ListItem>
     </List>
         </SwipeableDrawer>
-        </div>  
+    </div>  
         </Toolbar>
       </AppBar>
     </Box>
