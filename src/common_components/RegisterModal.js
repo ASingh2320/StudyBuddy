@@ -41,6 +41,12 @@ export default function RegisterModal(props) {
       email: data.get('email'),
       password: data.get('password'),
     });
+    if(data.get('email') == "studybuddy@gmail.com" && data.get('firstName') == "study" 
+    && data.get('lastName') == "buddy" && data.get('password') == "studdyBuddy@SBU2023")
+    {
+      props.setRegister(true);
+      props.setOpen(false);
+    }
   };
 
   return (

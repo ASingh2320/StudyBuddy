@@ -6,7 +6,6 @@ import Navbar from './common_components/Navbar';
 import HomeScreen from './HomeScreen';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
 function App() {
   return (
     <BrowserRouter>
