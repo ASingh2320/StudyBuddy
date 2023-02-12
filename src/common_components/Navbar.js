@@ -28,7 +28,8 @@ export default function Navbar() {
     const [leftdrawer, toggleLeft] = useState(false);
     const [selectMode, toggleSelect] = useState(false);
     const [markers, editMarkers] = useState([]);
-
+    const [login, setLogin] = useState(false);
+    const [register, setRegister] = useState(false);
     function toggleRegisterModal(){
       setOpenRegister(true);
       toggleDrawer(false);
@@ -41,12 +42,6 @@ export default function Navbar() {
     function toggleLoginModal(){
       setOpenLogin(true);
       toggleDrawer(false);
-    }
-
-
-    let registerModal = "";
-    if(openRegister) {
-    registerModal = " ";
     }
 
 
@@ -128,13 +123,13 @@ export default function Navbar() {
       <Button sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}} > Virtual </Button>
       </Link> 
       </ListItem>
+       <ListItem>
+        {(login )? <Typography sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif', color: 'blue'}}> { } </Typography> : 
+      <Button sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}} onClick={toggleLoginModal}> Login </Button>}
+      </ListItem> 
       <ListItem>
-      <Button sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}} onClick={toggleLoginModal}> Login </Button>
-      </ListItem>
-      <ListItem>
-      <Button sx={{fontSize: 20}} onClick={toggleRegisterModal}> Register </Button>
-      </ListItem>
-
+      {(login) ?  <Typography sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif', color: '#990000'}}> Study </Typography> : <Button sx={{fontSize: 20, fontFamily: '"Helvetica", "Arial", sans-serif'}} onClick={toggleRegisterModal}> Register </Button> }
+      </ListItem> 
     </List>
         </SwipeableDrawer>
           
@@ -193,8 +188,8 @@ export default function Navbar() {
             <AddIcon/>
         </Button>
       </AppBar>
-      {openRegister && <RegisterModal open={openRegister} setOpen={setOpenRegister}/>}
-      {openLogin && <LoginModal open={openLogin} setOpen={setOpenLogin}/>}
+      {openRegister && <RegisterModal open={openRegister} setOpen={setOpenRegister} registered={register} setRegister={setRegister}/>}
+      {openLogin && <LoginModal open={openLogin} setOpen={setOpenLogin} login={login} setLogin={setLogin}/>}
     </Box>
 
 

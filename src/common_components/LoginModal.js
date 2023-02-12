@@ -25,6 +25,9 @@ export default function LoginModal(props) {
       email: data.get('email'),
       password: data.get('password'),
     });
+    if(data.get('email') == "studybuddy@gmail.com" && data.get('password') == "studdyBuddy@SBU2023")
+      props.setLogin(true);
+      props.setOpen(false);
   };
 
 
