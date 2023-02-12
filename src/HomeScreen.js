@@ -20,10 +20,13 @@ export default function HomeScreen() {
         <div id="main"> 
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh' }}>
             
-            <div style={{fontFamily: '"Helvetica", "Arial", sans-serif' ,height: '100px', marginBottom: '20px', fontWeight: 'bold'}}> 
-            <div style={{ height: '30px', marginBottom: '20px', fontSize: 20, color: "#990000"}}> 
+            <div style={{fontFamily: '"Helvetica", "Arial", sans-serif' ,height: '100px', marginBottom: '20px'}}> 
+            <div style={{ height: '30px', marginBottom: '20px', fontSize: 20, color: "#990000",fontWeight: 'bold'}}> 
                 Welcome to StudyBuddy
             </div>
+            <div style={{ height: '30px',marginBotton:'10px', marginTop: '10px', fontSize: 20, color: "#990000"}}> 
+                    Study together, Success together!
+                </div>
                 <Autocomplete
                     style={{ marginBottom: '20px' }}
                     disablePortal
@@ -45,8 +48,9 @@ export default function HomeScreen() {
                     In-person
                 </Button>
                 <Button variant="contained" sx={{fontFamily: '"Helvetica", "Arial", sans-serif',color: "white", background: "#990000", fontWeight: 'bold'}}>
-                    Virtual Meeting
+                    Virtual
                 </Button>
+                
             </div>
             </div> 
         </div>  
